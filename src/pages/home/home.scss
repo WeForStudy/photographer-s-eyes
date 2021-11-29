@@ -6,4 +6,16 @@
         background-position: center;
         background-size: 100% 100%;
     }
+    // .prev-button, .next-button {
+    //     background: transparent !important;
+        
+    // }
+    // .next-button {
+    //     opacity: 1;
+    //     transform: translate(-70px, -25px);
+    //     background-color: white;
+    // }
+    .paging-dots--container {
+        display: none !important; // to hidden the paging dots
+    }
 }

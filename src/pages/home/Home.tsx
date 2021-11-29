@@ -5,13 +5,25 @@ import './home.scss';
 export default function Home() {
     return (
         <div className="home--wrapper">
-            <Carousel>
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
-                <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide6" />
+            <Carousel
+                autoplay={true}
+                autoplayReverse={true}
+                heightMode={'first'}
+                defaultControlsConfig = {{
+                    // hidden the paging-dots by class
+                    pagingDotsContainerClassName: 'paging-dots--container',
+                    prevButtonClassName: 'prev-button',
+                    // prevButtonText: ' ',
+                    nextButtonClassName: 'next-button',
+                    // nextButtonText: ' ',
+                }
+                }
+                speed={2000}
+            >
+                <img src="./imgs/bg-2.jpeg" alt="Opps."/>
+                {/* <img src="./imgs/bg.jpeg" alt="Opps."/> */}
+                {/* <img src="./imgs/bg-3.jpeg" alt="Opps."/> */}
+                <img src="./imgs/bg-4.jpeg" alt="Opps."/>
             </Carousel>
         </div>
     )
