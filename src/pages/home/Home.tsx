@@ -4,7 +4,7 @@ import './home.scss';
 export default function Home() {
     return (
         <div className="home--wrapper">
-            I'm home
+            <img className="home-bg-item"></img>
         </div>
     )
 }
