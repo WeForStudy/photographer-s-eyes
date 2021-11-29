@@ -1,0 +1,17 @@
+.header-wrapper {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    .logo a{
+        text-decoration: none;
+        font-size: 32px;
+        font-style: italic;
+        font-weight: 600;
+        color: #3e3e3e;
+        cursor: pointer;
+    }
+    .nav-list--wrapper {
+        display: flex;
+    }
+}

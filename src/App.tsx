@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import './App.css';
+import Header from './common/header/Header';
+import Home from './pages/home/Home';
+import navs from './common/const/navs';
 
 function App() {
+  // set default route
+  if (window.location.pathname === '/') {
+    window.history.replaceState('/home', '', '/home');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header></Header>
+          <Routes>
+            {/* @ts-ignore: Unreachable code error */}
+            <Route index path="/home" element={<Home />} />
+            {/* {
+              navs.map(nav => (
+                <Route path={nav.to} element={() => nav.element} ></Route>
+              ))
+            } */}
+          </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
