@@ -9,16 +9,17 @@ export default function Home() {
                 autoplay={true}
                 autoplayReverse={true}
                 heightMode={'first'}
-                defaultControlsConfig = {{
-                    // hidden the paging-dots by class
-                    pagingDotsContainerClassName: 'paging-dots--container',
-                    prevButtonClassName: 'prev-button',
-                    // prevButtonText: ' ',
-                    nextButtonClassName: 'next-button',
-                    // nextButtonText: ' ',
+                defaultControlsConfig = {
+                    {
+                        // hidden the paging-dots by class
+                        pagingDotsContainerClassName: 'paging-dots--container',
+                        prevButtonClassName: 'prev-button',
+                        // prevButtonText: ' ',
+                        nextButtonClassName: 'next-button',
+                        // nextButtonText: ' ',
+                    }
                 }
-                }
-                speed={2000}
+                speed={1500}
             >
                 <img src="./imgs/bg-2.jpeg" alt="Opps."/>
                 {/* <img src="./imgs/bg.jpeg" alt="Opps."/> */}

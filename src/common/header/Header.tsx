@@ -4,11 +4,16 @@ import './header.scss';
 import HeaderItem from './HeaderItem';
 import navs from '../const/navs';
 
+// interface HeaderProps {
+//     isHomepage: boolean;
+// }
+
+// #TODO fix is home class
 export default function Header() {
-    const isHomePage = window.location.pathname  === '/';
-    useEffect(() => {});
+    const headerClassArr = ['header-wrapper'];
+    headerClassArr.push('is-home');
     return (
-        <header className="header-wrapper">
+        <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>
             <div className="nav-list--wrapper">
                 {
