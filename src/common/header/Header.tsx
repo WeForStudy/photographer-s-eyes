@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './header.scss';
 import HeaderItem from './HeaderItem';
 import navs from '../const/navs';
 
 export default function Header() {
+    const isHomePage = window.location.pathname  === '/';
+    useEffect(() => {});
     return (
         <header className="header-wrapper">
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>

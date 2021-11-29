@@ -4,6 +4,7 @@
     left: 0px;
     height: 60px;
     width: 100vw;
+    z-index: 999;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -11,10 +12,11 @@
     padding-right: 0px;
     .logo a{
         text-decoration: none;
+        letter-spacing: 6px;
+        font-weight: 300;
         font-size: 32px;
         font-style: italic;
-        font-weight: 600;
-        color: #3e3e3e;
+        color: $font-color-normal;
         cursor: pointer;
     }
     .nav-list--wrapper {
