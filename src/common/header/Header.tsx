@@ -1,17 +1,23 @@
-import React, { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import './header.scss';
 import HeaderItem from './HeaderItem';
 import navs from '../const/navs';
 
-// interface HeaderProps {
-//     isHomepage: boolean;
-// }
-
-// #TODO fix is home class
 export default function Header() {
-    const headerClassArr = ['header-wrapper'];
-    headerClassArr.push('is-home');
+    let [headerClassArr, setHeaderClassArr] = useState(['header--wrapper'])
+    const location = useLocation()
+
+    useEffect(() => {
+      // runs on location, i.e. route, change
+      const { pathname } = location;
+      if (pathname === '/home') {
+        headerClassArr.push('is-home');
+        setHeaderClassArr([...headerClassArr, 'is-home'])
+      } else {
+        setHeaderClassArr(headerClassArr.filter(headerClass => headerClass !== 'is-home'));
+      }
+    }, [location])
     return (
         <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>

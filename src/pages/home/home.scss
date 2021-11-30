@@ -6,10 +6,10 @@
         background-position: center;
         background-size: 100% 100%;
     }
-    // .prev-button, .next-button {
-    //     background: transparent !important;
-        
-    // }
+    .prev-button, .next-button {
+        background: transparent !important;
+        font-size: 35px !important;
+    }
     // .next-button {
     //     opacity: 1;
     //     transform: translate(-70px, -25px);
@@ -17,5 +17,12 @@
     // }
     .paging-dots--container {
         display: none !important; // to hidden the paging dots
+    }
+    .slider-list {
+        cursor: default !important;
+    }
+    .slider-slide  {
+        user-select: none;
+        pointer-events: none;
     }
 }
