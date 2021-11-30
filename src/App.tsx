@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Header from './common/header/Header';
+import Footer from './common/footer/Footer';
 import Home from './pages/home/Home';
 import navs from './common/const/navs';
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/commercial" element={<Commercial />} />
             <Route path="/lifescape" element={<Lifescape />} />
           </Routes>
+          <Footer></Footer>
       </div>
     </BrowserRouter>
   );

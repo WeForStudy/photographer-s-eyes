@@ -15,11 +15,21 @@
     //     transform: translate(-70px, -25px);
     //     background-color: white;
     // }
+    .slider-control-centerright, .slider-control-centerleft {
+        margin-top: -60px;
+    }
     .paging-dots--container {
         display: none !important; // to hidden the paging dots
     }
     .slider-list {
         cursor: default !important;
+        max-height: 100vh;
+        min-height: 100vh;
+    }
+    .slider-slide > img {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
     }
     .slider-slide  {
         user-select: none;

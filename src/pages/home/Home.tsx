@@ -3,14 +3,26 @@ import Carousel from 'nuka-carousel';
 import './home.scss';
 
 export default function Home() {
+    const imgs = [
+        {
+            src: './imgs/bg-2.jpeg',
+        },
+        {
+            src: './imgs/bg-3.jpeg',
+        },
+        {
+            src: './imgs/bg-4.jpeg',
+        }
+    ];
     return (
         <div className="home--wrapper">
             <div className="controlers--wrapper"></div>
+            {/* autoplay={true}
+                autoplayReverse={true}
+                autoplayInterval={3000} */}
             <Carousel
                 heightMode={'first'}
-                autoplay={true}
-                autoplayReverse={true}
-                autoplayInterval={3000}
+               
                 defaultControlsConfig = {
                     {
                         // hidden the paging-dots by class
@@ -23,10 +35,10 @@ export default function Home() {
                 }
                 speed={1500}
             >
-                <img src="./imgs/bg-2.jpeg" alt="Opps."/>
-                <img src="./imgs/bg-4.jpeg" alt="Opps."/>
+                {
+                    imgs.map(image => (<img src={image.src} alt="Opps."/>))
+                }
             </Carousel>
-            <span className="iconfont icon-arrow-left-bold"></span>
         </div>
     )
 }
