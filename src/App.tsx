@@ -8,7 +8,6 @@ import './App.css';
 import Header from './common/header/Header';
 import Footer from './common/footer/Footer';
 import Home from './pages/home/Home';
-import navs from './common/const/navs';
 
 import Landscape from './pages/landscape/Landscape';
 import Cityscape from './pages/cityscape/Cityscape';
@@ -16,6 +15,7 @@ import Architecture from './pages/architecture/Architecture';
 import Portrait from './pages/portrait/Portrait';
 import Commercial from './pages/commercial/Commercial';
 import Lifescape from './pages/lifescape/Lifescape';
+import Contact from './pages/contact/Contact';
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
             <Route path="/portrait" element={<Portrait />} />
             <Route path="/commercial" element={<Commercial />} />
             <Route path="/lifescape" element={<Lifescape />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer></Footer>
       </div>

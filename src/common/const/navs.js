@@ -82,5 +82,9 @@ const navs = [
             // },
         ]
     },
+    {
+        title: '合作',
+        to: '/contact',
+    }
 ];
 export default navs;

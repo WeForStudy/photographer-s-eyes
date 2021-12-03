@@ -2,7 +2,7 @@
 .header-select--wrapper {
     z-index: 999;
     .nav-title {
-        padding: 7px 30px;
+        padding: 7px 10px;
         padding-top: 12px;
         font-size: $font-size-normal;
         letter-spacing: 5px;
@@ -11,6 +11,8 @@
         cursor: pointer;
         .icon {
             display: inline-block;
+            position: relative;
+            top: 3px;
             transform: rotate(90deg);
             font-size: $font-size-normal;
         }
@@ -18,15 +20,17 @@
     .nav-subitem--wrapper {
         display: none;
         opacity: 0;
-        transition: display 0.2s ease 0s, opacity 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
         background-color: #FFF;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 20px -2px;
-        max-width: 80px;
-        margin-left: 10px;
         text-overflow: ellipsis;
         .nav-item {
             padding: 6px 0px;
-            letter-spacing: 0px;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out 0s;
+            &:hover {
+                opacity: 0.4;
+            }
         }
     }
     &:hover {
