@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 import './home.scss';
+import { getHomeImgs } from '../../apis/home';
 
 export default function Home() {
     const imgs = [
@@ -14,6 +15,11 @@ export default function Home() {
             src: './imgs/bg-4.jpeg',
         }
     ];
+    getHomeImgs().then(res => {
+        console.log(res);
+    }).catch(err => {
+        console.log(err);
+    });
     return (
         <div className="home--wrapper">
             <div className="controlers--wrapper"></div>
