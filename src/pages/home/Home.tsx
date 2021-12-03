@@ -36,7 +36,7 @@ export default function Home() {
                 speed={1500}
             >
                 {
-                    imgs.map(image => (<img src={image.src} alt="Opps."/>))
+                    imgs.map(image => (<img key={image.src} src={image.src} alt="Opps."/>))
                 }
             </Carousel>
         </div>

@@ -1,0 +1,19 @@
+.cityscape--wrapper {
+  height: calc(100vh - #{$nav-height} - #{$footer-height});
+  .pics {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    .right {
+      cursor: e-resize;
+    }
+    .left {
+      cursor: w-resize;
+    }
+    img {
+      height: 300px;
+      margin-right: 50px;
+    }
+  }
+}

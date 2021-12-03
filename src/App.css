@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+* {
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
 
 .App-logo {
   height: 40vmin;

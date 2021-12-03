@@ -13,34 +13,74 @@ const navs = [
         element: Home,
     },
     {
-        title: '风光',
-        to: 'landscape',
-        element: Landscape,
+        title: '图库',
+        children: [
+            {
+                title: '风光',
+                to: 'landscape',
+                element: Landscape,
+            },
+            {
+                title: '城市',
+                to: 'cityscape',
+                element: Cityscape,
+            },
+            {
+                title: '建筑',
+                to: 'architecture',
+                element: Architecture,
+            },
+            {
+                title: '人像',
+                to: 'portrait',
+                element: Portrait,
+            },
+            {
+                title: '商业',
+                to: 'commercial',
+                element: Commercial,
+            },
+            {
+                title: '生活',
+                to: 'lifescape',
+                element: Lifescape,
+            },
+        ]
     },
     {
-        title: '城市',
-        to: 'cityscape',
-        element: Cityscape,
-    },
-    {
-        title: '建筑',
-        to: 'architecture',
-        element: Architecture,
-    },
-    {
-        title: '人像',
-        to: 'portrait',
-        element: Portrait,
-    },
-    {
-        title: '商业',
-        to: 'commercial',
-        element: Commercial,
-    },
-    {
-        title: '生活',
-        to: 'lifescape',
-        element: Lifescape,
+        title: '项目',
+        children: [
+            // {
+            //     title: '风光',
+            //     to: 'landscape',
+            //     element: Landscape,
+            // },
+            // {
+            //     title: '城市',
+            //     to: 'cityscape',
+            //     element: Cityscape,
+            // },
+            // {
+            //     title: '建筑',
+            //     to: 'architecture',
+            //     element: Architecture,
+            // },
+            // {
+            //     title: '人像',
+            //     to: 'portrait',
+            //     element: Portrait,
+            // },
+            // {
+            //     title: '商业',
+            //     to: 'commercial',
+            //     element: Commercial,
+            // },
+            // {
+            //     title: '生活',
+            //     to: 'lifescape',
+            //     element: Lifescape,
+            // },
+        ]
     },
 ];
 export default navs;

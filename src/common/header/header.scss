@@ -1,6 +1,5 @@
 .header--wrapper {
-   
-    height: 60px;
+    height: $nav-height;
     width: 100vw;
     box-sizing: border-box;
     display: flex;
@@ -12,6 +11,9 @@
         top: 0px;
         left: 0px;
         z-index: 999;
+    }
+    &:not(.is-home) {
+        border-bottom: 1px solid #ededed;
     }
     .logo a{
         text-decoration: none;

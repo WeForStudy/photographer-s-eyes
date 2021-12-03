@@ -1,11 +1,12 @@
 .footer--wrapper {
-    height: 120px;
+    height: $footer-height;
     background: black;
+    box-sizing: border-box;
     padding-bottom: 5px;
     .copyright {
       color: white;
       font-family: monospace;
-      font-size: 12px;
+      font-size: $font-size-small;
       text-align: center;
     }
     .top {
@@ -26,7 +27,7 @@
           font-family: cursive;
         }
         .content {
-          font-size: 12px;
+          font-size: $font-size-small;
           a {
             text-decoration: none;
             color: white;
@@ -39,7 +40,7 @@
         .subscribe-input {
           padding: 7px 6px;
           margin-right: 12px;
-          font-size: 12px;
+          font-size: $font-size-small;
           border: 1px solid white;
           background: #000;
           color: white;

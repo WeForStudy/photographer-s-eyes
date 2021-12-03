@@ -2,19 +2,16 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './header-item.scss';
 
-interface HeaderItemNavProp {
+export interface HeaderItemProp {
     title: string;
     to: string;
 }
-interface HeaderItemProp {
-    nav: HeaderItemNavProp;
-}
 
 export default function HeaderItem(props: HeaderItemProp) {
-    const { nav } = props;
+    const { to, title } = props;
     return (
-        <Link to={nav.to} className="nav-item--wrapper">
-            <div className="nav-item">{nav.title}</div>
+        <Link to={to} className="nav-item--wrapper">
+            <div className="nav-item">{title}</div>
         </Link>
     )
 }
