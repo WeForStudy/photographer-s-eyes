@@ -29,6 +29,7 @@ export default function Footer() {
             <div className="title">联系我</div>
             <div className="content">
               <a href="mailto:haoranjiang@gmail.com">HAORAOJIANG@GMAIL.COM</a>
+              <img className="icon-item" src={icons[0].src} onClick={() => handleIconImgClick(icons[0].link)} alt={icons[0].title} />
             </div>
           </div>
           <div className="follow-me--wrapper">
@@ -41,7 +42,10 @@ export default function Footer() {
           </div>
           <div className="subscribe-me--wrapper">
             <div className="title">订阅最新消息</div>
-            <input type="text" className="subscribe-input" placeholder="请输入您的邮箱" />
+            <div className="input--wrapper">
+              <input type="text" className="subscribe-input" placeholder="请输入您的邮箱" />
+              <img className="submit-icon-item" src={icons[0].src} onClick={() => handleIconImgClick(icons[0].link)} alt={icons[0].title} />
+            </div>
             <button className="subscribe-button">订阅</button>
           </div>
         </section>

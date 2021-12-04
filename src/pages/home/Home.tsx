@@ -16,9 +16,9 @@ export default function Home() {
         }
     ];
     getHomeImgs().then(res => {
-        console.log(res);
+        // console.log(res);
     }).catch(err => {
-        console.log(err);
+        // console.log(err);
     });
     return (
         <div className="home--wrapper">

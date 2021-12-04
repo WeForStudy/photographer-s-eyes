@@ -13,30 +13,32 @@
       padding: 15px 10px;
       padding-bottom: 10px;
       display: flex;
-      // margin: 0 auto;
-      // align-items: center;
       justify-content: space-around;
-
-      color: white;
-      // div {
-      //   margin-right: 120px;
-      // }
-      .contact-me--wrapper, .follow-me--wrapper, .subscribe-me--wrapper {
-        .title {
-          margin-bottom: 10px;
-          font-family: cursive;
+      color: #FFF;
+    }
+    .contact-me--wrapper, .follow-me--wrapper, .subscribe-me--wrapper {
+      .title {
+        margin-bottom: 10px;
+        font-family: cursive;
+      }
+      .content {
+        font-size: $font-size-small;
+        a {
+          text-decoration: none;
+          color: white;
         }
-        .content {
-          font-size: $font-size-small;
-          a {
-            text-decoration: none;
-            color: white;
-          }
-          .icon-item {
-            margin-left: 10px;
-            cursor: pointer;
-          }
+        .icon-item {
+          margin-left: 10px;
+          cursor: pointer;
         }
+      }
+    }
+    .subscribe-me--wrapper {
+      .submit-icon-item {
+        display: none;
+      }
+      .input--wrapper {
+        display: inline-block;
         .subscribe-input {
           padding: 7px 6px;
           margin-right: 12px;
@@ -48,17 +50,64 @@
             outline: none;
           }
         }
-        .subscribe-button {
-          font-family: cursive;
-          padding: 6px 20px;
-          padding-left: 40px;
-          text-align: center;
-          cursor: pointer;
-          background: white;
-          letter-spacing: 20px;
-          border: none;
-          border-radius: 3px;
+      }
+      
+      .subscribe-button {
+        font-family: cursive;
+        padding: 6px 20px;
+        padding-left: 40px;
+        text-align: center;
+        cursor: pointer;
+        background: white;
+        letter-spacing: 20px;
+        border: none;
+        border-radius: 3px;
+      }
+    }
+    .contact-me--wrapper {
+      .content {
+        .icon-item {
+          display: none;
         }
       }
     }
+}
+
+@media only screen and (max-width: 375px) {
+  .footer--wrapper {
+    .top {
+      justify-content: center;
+      .contact-me--wrapper {
+        margin-right: 20px;
+        .content {
+          a {
+            display: none;
+          }
+          .icon-item {
+            display: inline-block;
+          }
+        }
+      }
+      .follow-me--wrapper {
+        margin-right: 20px;
+        .content {
+          .icon-item {
+            margin-left: 4px;
+          }
+        }
+      }
+      .subscribe-me--wrapper {
+        .subscribe-button {
+          display: none;
+        }
+        .submit-icon-item {
+          display: inline-block;
+        }
+      }
+      .copyright {
+        margin-top: 10px;
+      }
+    }
+      
+  }
 }

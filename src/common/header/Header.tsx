@@ -13,12 +13,12 @@ export default function Header() {
       // runs on location, i.e. route, change
       const { pathname } = location;
       if (pathname === '/home') {
-        headerClassArr.push('is-home');
-        setHeaderClassArr([...headerClassArr, 'is-home'])
+        !(headerClassArr.includes('is-home')) && headerClassArr.push('is-home');
+        setHeaderClassArr([...headerClassArr]);
       } else {
         setHeaderClassArr(headerClassArr.filter(headerClass => headerClass !== 'is-home'));
       }
-    }, [location])
+    }, [location]);
     return (
         <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>

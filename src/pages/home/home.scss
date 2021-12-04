@@ -35,3 +35,10 @@
         pointer-events: none;
     }
 }
+
+
+@media only screen and (max-width: 375px) {
+    .home--wrapper {
+        height: calc(100vh - #{$footer-height});
+    }
+}

@@ -9,3 +9,11 @@
         color: $font-color-normal;
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .nav-item-wrapper {
+        .nav-item {
+            padding: 12px 4px;
+        }
+    }
+}
