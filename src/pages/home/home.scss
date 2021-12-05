@@ -16,7 +16,7 @@
     //     background-color: white;
     // }
     .slider-control-centerright, .slider-control-centerleft {
-        margin-top: -60px;
+        margin-top: #{-$nav-height};
     }
     .paging-dots--container {
         display: none !important; // to hidden the paging dots
@@ -40,5 +40,12 @@
 @media only screen and (max-width: 375px) {
     .home--wrapper {
         height: calc(100vh - #{$footer-height});
+        .slider-frame {
+            display: flex !important;
+            align-items: center;
+        }
+        .slider-control-centerright, .slider-control-centerleft {
+            margin-top: 0px;
+        }
     }
 }
