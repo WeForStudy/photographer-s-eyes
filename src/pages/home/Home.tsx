@@ -1,25 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'nuka-carousel';
 import './home.scss';
 import { getHomeImgs } from '../../apis/home';
+import { useImgs } from '../../hooks/imgs';
 
 export default function Home() {
-    const imgs = [
-        {
-            src: './imgs/bg-2.jpeg',
-        },
-        {
-            src: './imgs/bg-3.jpeg',
-        },
-        {
-            src: './imgs/bg-4.jpeg',
-        }
-    ];
-    getHomeImgs().then(res => {
-        // console.log(res);
-    }).catch(err => {
-        // console.log(err);
-    });
+    const [imgs] = useImgs([], getHomeImgs);
+    
     return (
         <div className="home--wrapper">
             <div className="controlers--wrapper"></div>

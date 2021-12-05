@@ -1,6 +1,5 @@
 .home--wrapper {
     .home-bg-item {
-        background: url('./bg.jpeg');
         width: 100vw;
         height: 100vh;
         background-position: center;
@@ -22,12 +21,12 @@
         display: none !important; // to hidden the paging dots
     }
     .slider-list {
-        cursor: default !important;
+        // cursor: default !important;
         max-height: 100vh;
     }
     .slider-slide > img {
-        width: auto;
-        height: 100%;
+        // width: auto;
+        // height: 100%;
         max-width: 100%;
     }
     .slider-slide  {
@@ -40,10 +39,6 @@
 @media only screen and (max-width: 375px) {
     .home--wrapper {
         height: calc(100vh - #{$footer-height});
-        .slider-frame {
-            display: flex !important;
-            align-items: center;
-        }
         .slider-control-centerright, .slider-control-centerleft {
             margin-top: 0px;
         }

@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import './App.css';
+import './app.scss';
+
 import Header from './common/header/Header';
 import Footer from './common/footer/Footer';
 import Home from './pages/home/Home';

@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './landscape.scss';
+import { getLandscapeImgs } from '../../apis/landscape';
+import { useImgs } from '../../hooks/imgs';
 import Carousel from 'nuka-carousel';
 
+interface ImageType {
+    src: string,
+}
+
 export default function Landscape() {
-    const imgs = [
-        {
-            src: './imgs/bg-2.jpeg',
-        },
-        {
-            src: './imgs/bg-3.jpeg',
-        },
-        {
-            src: './imgs/bg-4.jpeg',
-        }
-    ];
+
+    const [imgs] = useImgs([], getLandscapeImgs);
     return (
         <div className="landscape--wrapper">
             <Carousel
