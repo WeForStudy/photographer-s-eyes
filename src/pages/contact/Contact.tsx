@@ -1,11 +1,10 @@
 
-import React, { FormEvent, useState } from 'react';
+import React from 'react';
 import './contact.scss';
 import { sendContactForm } from '../../apis/contact';
 import { useInput } from '../../hooks/input';
 
 export default function Contact() {
-    // #TODO finish the ajax part
     function handleSentBtnClick() {
         sendContactForm({
             name,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Carousel from 'nuka-carousel';
 import './home.scss';
 import { getHomeImgs } from '../../apis/home';
@@ -10,12 +10,12 @@ export default function Home() {
     return (
         <div className="home--wrapper">
             <div className="controlers--wrapper"></div>
-            {/* autoplay={true}
-                autoplayReverse={true}
-                autoplayInterval={3000} */}
+            
             <Carousel
                 heightMode={'first'}
-               
+                autoplay={true}
+                autoplayReverse={true}
+                autoplayInterval={3000}
                 defaultControlsConfig = {
                     {
                         // hidden the paging-dots by class

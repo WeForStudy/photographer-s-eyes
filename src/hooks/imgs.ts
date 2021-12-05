@@ -8,7 +8,7 @@ export function useImgs(initialVal: Array<ImageType>, apisCall: Function): [Arra
       apisCall().then((res: any) => {
           setImgs(res);
       });
-  }, [])
+  }, [apisCall])
   return [imgs];
 }
     

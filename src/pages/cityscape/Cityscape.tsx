@@ -3,7 +3,7 @@ import React from 'react';
 import './cityscape.scss';
 
 export default function Cityscape() {
-    const picsArr = [];
+    // const picsArr = [];
     return (
         <div className="cityscape--wrapper">
             <div className="pics">

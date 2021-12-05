@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './landscape.scss';
 import { getLandscapeImgs } from '../../apis/landscape';
 import { useImgs } from '../../hooks/imgs';
 import Carousel from 'nuka-carousel';
-
-interface ImageType {
-    src: string,
-}
 
 export default function Landscape() {
 
