@@ -1,5 +1,5 @@
 import http from './http';
 
 export function getHomeImgs () {
-  return http.get('/mock/home.json');
+  return http.get('/home.json');
 }

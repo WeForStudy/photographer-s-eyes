@@ -18,7 +18,7 @@ export default function Header() {
       } else {
         setHeaderClassArr(headerClassArr.filter(headerClass => headerClass !== 'is-home'));
       }
-    }, [location, headerClassArr]);
+    }, []);
     return (
         <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>

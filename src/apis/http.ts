@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-  // baseURL: '/',
+  baseURL: '/mock',
   timeout: 3000, // the unit is millsecond
   // headers: {'X-Custom-Header': 'foobar'}
 });
