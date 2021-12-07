@@ -9,6 +9,10 @@ export default function Cityscape() {
     const [imgs] = useImgs([], getCityscapeImgs);
     const [currentImgShowIndex, setCurrentImgShowIndex] = useState<number>(0);
     function handleImageClick(img: ImageType, isEven: boolean) {
+        // console.log(currentImgShowIndex);
+        // setInterval(() => {
+        //     console.log('from timer', currentImgShowIndex);
+        // }, 1000);
         const gap: number = 2;
         if (isEven) {
             if (currentImgShowIndex !== 0) {
@@ -21,14 +25,13 @@ export default function Cityscape() {
         }
     }
     return (
-        <div className="cityscape--wrapper">
+        <div className="cityscape--wrapper func--full-height">
             <div className="pics">
                 {
                     imgs.map((image, idx) => {
                         const isEven = idx % 2 === 0;
                         const classNames: string[] = [];
                         classNames.push(isEven ? 'left' : 'right');
-                        console.log(currentImgShowIndex);
                         if (currentImgShowIndex === idx || currentImgShowIndex + 1 === idx) {
                             classNames.push('is-show');
                         }

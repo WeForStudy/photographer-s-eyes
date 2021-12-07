@@ -8,7 +8,7 @@ export default function Landscape() {
 
     const [imgs] = useImgs([], getLandscapeImgs);
     return (
-        <div className="landscape--wrapper">
+        <div className="landscape--wrapper func--full-height">
             <Carousel
                 heightMode={'first'}
                 transitionMode="fade"

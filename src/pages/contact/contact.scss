@@ -1,7 +1,6 @@
 .contact--wrapper {
   max-width: 300px;
   margin: 0 auto;
-  height: calc(100vh - #{$nav-height} - #{$footer-height});
   display: flex;
   flex-direction: column;
   justify-content: center;

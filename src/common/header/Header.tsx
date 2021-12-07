@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import './header.scss';
 import HeaderItem from './HeaderItem';
@@ -9,7 +9,7 @@ export default function Header() {
     let [headerClassArr, setHeaderClassArr] = useState(['header--wrapper'])
     const location = useLocation()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
       // runs on location, i.e. route, change
       const { pathname } = location;
       if (pathname === '/home') {
@@ -18,7 +18,7 @@ export default function Header() {
       } else {
         setHeaderClassArr(headerClassArr.filter(headerClass => headerClass !== 'is-home'));
       }
-    }, []);
+    }, [location]);
     return (
         <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>

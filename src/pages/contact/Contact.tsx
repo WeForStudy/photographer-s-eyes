@@ -18,7 +18,7 @@ export default function Contact() {
     const [email, handleEmailChange] = useInput('');
     const [message, handleMessageChange] = useInput('');
     return (
-        <div className="contact--wrapper">
+        <div className="contact--wrapper func--full-height">
             <div className="title">To HaoranJiang@gmail.com</div>
             <div className="form--wrapper">
                 <div className="form-item">
