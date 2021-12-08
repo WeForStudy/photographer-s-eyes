@@ -23,7 +23,9 @@ export function useInterval(callback: any, delay: any) {
           intervalRef.current = window.setInterval(() => callbackRef.current(), delay);
 
           // Clear interval if the components is unmounted or the delay changes:
-          return () => window.clearInterval(intervalRef.current);
+          return () => {
+              window.clearInterval(intervalRef.current);
+          };
       }
   }, [delay]);
 
