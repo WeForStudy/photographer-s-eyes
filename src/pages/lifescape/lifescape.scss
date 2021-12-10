@@ -1,0 +1,61 @@
+.lifescape--wrapper {
+  .pics {
+    height: 100%;
+    margin: 0 auto;
+    max-width: $frame-width;
+    position: relative;
+    .left, .right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 300px;
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+      &.is-show {
+        opacity: 1;
+      }
+    }
+    .right {
+      cursor: e-resize;
+      right: 0px;
+    }
+    .left {
+      cursor: w-resize;
+      left: 0px;
+    }
+    
+    
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .lifescape--wrapper {
+      .pics {
+        max-height: 55vh;
+        top: 50%;
+        transform: translateY(-50%);
+        .left, .right {
+          display: block;
+          top: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          height: auto;
+          width: 300px;
+          opacity: 0;
+          transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+          &.is-show {
+            opacity: 1;
+          }
+        }
+        .right {
+          cursor: e-resize;
+          right: auto;
+          bottom: 10px;
+        }
+        .left {
+          cursor: w-resize;
+          top: 10px;
+        }
+      }
+  }
+}

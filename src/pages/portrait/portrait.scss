@@ -1,0 +1,77 @@
+.portrait--wrapper {
+  .pics {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    .left, .right {
+      position: relative;
+      height: 100%;
+      width: 50%;
+      .img {
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+        max-height: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        &.is-show {
+          opacity: 1;
+        }
+      }
+    }
+    .left {
+      cursor: w-resize;
+      margin-right: 2vw;
+      .img {
+        right: 0px;
+      }
+    }
+    .right {
+      cursor: e-resize;
+      .img {
+        left: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .portrait--wrapper {
+      .pics {
+        max-height: 55vh;
+        top: 50%;
+        transform: translateY(-50%);
+        .left, .right {
+          .img {
+            display: block;
+            top: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            height: auto;
+            width: 300px;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+            &.is-show {
+              opacity: 1;
+            }
+          }
+         
+        }
+        .right {
+          cursor: e-resize;
+          .img {
+            right: auto;
+            bottom: 10px;
+          }
+        }
+        .left {
+          cursor: w-resize;
+          .img {
+            top: 10px;
+          }
+        }
+      }
+  }
+}
