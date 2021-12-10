@@ -59,17 +59,6 @@ export default function Portrait() {
                     })
             }
             </div>
-                {/* {
-                    imgs.map((image, idx) => {
-                        const isEven = idx % 2 === 0;
-                        let className: string = isEven ? 'left' : 'right';
-                        const imgClassNames: string[] = ['img'];
-                        if (currentImgShowIndex === idx || currentImgShowIndex + 1 === idx) {
-                            imgClassNames.push('is-show');
-                        }
-                        return <img key={image.src} src={image.src} onClick={() => handleImageClick(image, isEven)} alt="Opps." className={imgClassNames.join(' ')} />
-                    })
-                } */}
             </div>
         </div>
     )
