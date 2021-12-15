@@ -1,88 +1,65 @@
 
-import React, { useState, useEffect, useRef } from 'react';
-// import './commercial.scss';
+import React, { useState } from 'react';
+import { getCommercialImgs } from '../../apis/commercial';
+import { useImgs } from '../../hooks/imgs';
+import './commercial.scss';
+import Carousel from 'nuka-carousel';
+import { ImageType } from '../../types/ImageType';
 
-
-// export default function Commercial() {
-//     const [count, setCount] = useState(0);
-//     const intervalRef = React.useRef();
-//     // const callbackRef = React.useRef();
-//     // const intervalRef = useInterval(() => {
-//     //     if (time < 10) {
-//     //       setTime(time + 1);
-//     //     } else {
-//     //       window.clearInterval(intervalRef.current);
-//     //     }
-//     //   }, isPaused ? null : 1000);
-
-//     useEffect(() => {
-//         setInterval(() => {
-//             console.log('once');
-//             setCount(count + 1);
-//         }, 1000);
-//     }, [])
-//     return (
-//         <div className="commericial--wrapper">
-//             I'm commercial
-//             {count}
-//         </div>
-//     )
-// }
-
-function useInterval(callback: any, delay: any) {
-    const intervalRef = React.useRef();
-    const callbackRef = React.useRef(callback);
-
-    // Remember the latest callback:
-    //
-    // Without this, if you change the callback, when setInterval ticks again, it
-    // will still call your old callback.
-    //
-    // If you add `callback` to useEffect's deps, it will work fine but the
-    // interval will be reset.
-
-    React.useEffect(() => {
-        callbackRef.current = callback;
-    }, [callback]);
-
-    // Set up the interval:
-
-    React.useEffect(() => {
-        if (typeof delay === 'number') {
-            // @ts-ignore
-            intervalRef.current = window.setInterval(() => callbackRef.current(), delay);
-
-            // Clear interval if the components is unmounted or the delay changes:
-            return () => window.clearInterval(intervalRef.current);
-        }
-    }, [delay]);
-
-    // Returns a ref to the interval ID in case you want to clear it manually:
-    return intervalRef;
-}
-
-
-const Clock = () => {
-    const [time, setTime] = React.useState(0);
-    const [isPaused, setPaused] = React.useState(false);
-
-    const intervalRef = useInterval(() => {
-        if (time < 10) {
-            setTime(time + 1);
+export default function Commercial() {
+    const [imgs] = useImgs([], getCommercialImgs);
+    const [isDialogueShow, setIsDialogueShow] = useState<Boolean>(false);
+    const [slideIndex, setSlideIndex] = useState<number>(0);
+    const dialogueClassess = ['dialogue--wrapper'];
+    if (isDialogueShow) {
+        dialogueClassess.push('is-show')
+    }
+    function handleImageClick(image: ImageType, index: number) {
+        setIsDialogueShow(true);
+        setSlideIndex(index);
+    }
+    function handleDialogueClick(isInner: boolean = false, e?: any) {
+        if (isInner) {
+            e.stopPropagation();
         } else {
-            window.clearInterval(intervalRef.current);
+            setIsDialogueShow(false);
         }
-    }, isPaused ? null : 1000);
-
-    return (<React.Fragment>
-        <button onClick={() => setPaused(prevIsPaused => !prevIsPaused)} disabled={time === 10}>
-            {isPaused ? 'RESUME ⏳' : 'PAUSE '}
-        </button>
-
-        <p>{time.toString().padStart(2, '0')}/10 sec.</p>
-        <p>setInterval {time === 10 ? 'stopped.' : 'running...'}</p>
-    </React.Fragment>);
+    }
+    return (
+        <div className="commericial--wrapper func--full-height">
+            <div className="preview--wrapper">
+                {
+                    imgs.map((image, index) => {
+                        return (<div className="previewr--item" key={image.src} onClick={() => handleImageClick(image, index)} style={ {backgroundImage: `url(${image.src})`} }>
+                        </div>)
+                    })
+                }
+            </div>
+            <div className={dialogueClassess.join(' ')} onClick={() => handleDialogueClick()}>
+                <div className="dialogue--inner" onClick={(e) => handleDialogueClick(true, e)}>
+                    <Carousel
+                        heightMode={'first'}
+                        slideIndex={slideIndex}
+                        transitionMode={"fade"}
+                        cellAlign="center"
+                        defaultControlsConfig = {
+                            {
+                                // hidden the paging-dots by class
+                                pagingDotsContainerClassName: 'paging-dots--container',
+                                prevButtonText: ' ',
+                                prevButtonClassName: 'prev-button iconfont icon-arrow-left-bold',
+                                nextButtonText: ' ',
+                                nextButtonClassName: 'next-button iconfont icon-arrow-right-bold',
+                            }
+                        }
+                        speed={1500}
+                    >
+                        {
+                            imgs.map(image => (<img key={image.src} src={image.src} alt="Opps."/>))
+                        }
+                    </Carousel>
+                </div>
+            </div>
+        </div>
+    )
 }
-export default Clock;
-//   return Clocl
-//   ReactDOM.render(<Clock />, document.querySelector('#app'));

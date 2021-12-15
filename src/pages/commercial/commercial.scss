@@ -1,0 +1,86 @@
+.commericial--wrapper {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  .preview--wrapper {
+    max-width: 950px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    .previewr--item {
+      display: inline-block;
+      background-color: rgba(165, 165, 165, 0.1);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 200px;
+      height: 200px;
+      background-size: 150%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+      &:hover {
+        opacity: 0.6;
+        filter: blur(0px);
+      }
+    }
+  }
+  .dialogue--wrapper {
+    position: fixed;
+    background: #FFF;
+    display: none;
+    top: $nav-height;
+    bottom: $footer-height;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    &.is-show {
+      display: flex;
+      cursor: url('./cross.png') 4 6, default;
+    }
+    .dialogue--inner {
+      height: 90%;
+      width: 80vw;
+      display: flex;
+      align-items: center;
+      .paging-dots--container {
+        display: none !important; // to hidden the paging dots
+      }
+      .slider-list {
+        cursor: default !important;
+        max-height: 100vh;
+        height: 100% !important;
+      }
+      .paging-dots--container {
+        display: none !important; // to hidden the paging dots
+      }
+      .slider-slide  {
+        height: 100% !important;
+        display: flex !important;
+        user-select: none;
+        pointer-events: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider-slide > img {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+      }
+      .slider-control-centerright {
+        right: 20px !important;
+      }
+      .slider-control-centerleft {
+        left: 20px !important;
+      }
+      .slider-control-centerright, .slider-control-centerleft {
+        button {
+          border-radius: 50%;
+          &:hover {
+            transform: scale(1.105);
+            transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+          }
+        }
+      }
+    }
+  }
+}
