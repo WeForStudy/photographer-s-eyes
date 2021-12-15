@@ -1,12 +1,32 @@
 .project--wrapper {
   z-index: 999;
   display: flex;
-  // align-items: center;
-  // justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  justify-content: center;
+  box-sizing: border-box;
+  .preview--list {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .preview--item {
+      margin-bottom: 5px;
+      letter-spacing: 12px;
+      color: #8D8E8E;
+      &.cursor {
+        cursor: pointer;
+      }
+      &.is-checked {
+        text-decoration: line-through;
+      }
+    }
+  }
   .preview--wrapper {
-    max-width: 950px;
     flex-wrap: wrap;
-    .previewr--item {
+    max-width: 950px;
+    .preview-img--item {
       display: inline-block;
       background-color: rgba(165, 165, 165, 0.1);
       margin-right: 10px;

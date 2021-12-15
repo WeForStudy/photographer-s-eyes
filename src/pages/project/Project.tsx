@@ -7,25 +7,31 @@ import Carousel from 'nuka-carousel';
 import { ImageType } from '../../types/ImageType';
 
 export default function Commercial() {
+
     const [projects] = useImgs([], getAllProjectsImgs);
     const [imgs, setImgs] = useState <ImageType[]>([]);
     const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
+
     useEffect(() => {
         if (projects.length) {
             setImgs(projects[currentProjectIndex].children);
         }
-        console.log(projects);
-    }, [projects]);
+    }, [projects, currentProjectIndex]);
+
     const [isDialogueShow, setIsDialogueShow] = useState<Boolean>(false);
     const [slideIndex, setSlideIndex] = useState<number>(0);
+
     const dialogueClassess = ['dialogue--wrapper'];
     if (isDialogueShow) {
         dialogueClassess.push('is-show')
     }
+
+
     function handleImageClick(image: ImageType, index: number) {
         setIsDialogueShow(true);
         setSlideIndex(index);
     }
+
     function handleDialogueClick(isInner: boolean = false, e?: any) {
         if (isInner) {
             e.stopPropagation();
@@ -33,18 +39,32 @@ export default function Commercial() {
             setIsDialogueShow(false);
         }
     }
+
+    function handlePreviewItemClick(index: number) {
+        if (currentProjectIndex !== index) {
+            setCurrentProjectIndex(index);
+        }
+    }
+
+
     return (
         <div className="project--wrapper func--full-height">
             <div className="preview--list">
-                {/* {projects[0].title} */}
+                <div className="preview--item">筛选：</div>
                 {
-                    projects.map(project => (<div className="preview--item" key={project.type}>{project.title}</div>))
+                    projects.map((project, index) => {
+                        const previewItemClasses = ['preview--item', 'cursor'];
+                        if (index === currentProjectIndex) {
+                            previewItemClasses.push('is-checked')
+                        }
+                        return <div className={previewItemClasses.join(' ')} onClick={() => handlePreviewItemClick(index)} key={project.type}>{project.title}</div>
+                    })
                 }
             </div>
             <div className="preview--wrapper">
                 {
                     imgs.map((image, index) => {
-                        return (<div className="previewr--item" key={image.src} onClick={() => handleImageClick(image, index)} style={ {backgroundImage: `url(${image.src})`} }>
+                        return (<div className="preview-img--item" key={image.src} onClick={() => handleImageClick(image, index)} style={ {backgroundImage: `url(${image.src})`} }>
                         </div>)
                     })
                 }
