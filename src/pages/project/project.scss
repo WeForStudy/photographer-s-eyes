@@ -1,10 +1,10 @@
-.commercial--wrapper {
+.project--wrapper {
   z-index: 999;
   display: flex;
-  align-items: center;
+  // align-items: center;
+  // justify-content: center;
   .preview--wrapper {
     max-width: 950px;
-    margin: 0 auto;
     flex-wrap: wrap;
     .previewr--item {
       display: inline-block;

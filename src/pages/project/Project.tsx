@@ -1,13 +1,21 @@
 
-import React, { useState } from 'react';
-import { getCommercialImgs } from '../../apis/commercial';
+import React, { useState, useEffect } from 'react';
+import { getAllProjectsImgs } from '../../apis/project';
 import { useImgs } from '../../hooks/imgs';
-import './commercial.scss';
+import './project.scss';
 import Carousel from 'nuka-carousel';
 import { ImageType } from '../../types/ImageType';
 
 export default function Commercial() {
-    const [imgs] = useImgs([], getCommercialImgs);
+    const [projects] = useImgs([], getAllProjectsImgs);
+    const [imgs, setImgs] = useState <ImageType[]>([]);
+    const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
+    useEffect(() => {
+        if (projects.length) {
+            setImgs(projects[currentProjectIndex].children);
+        }
+        console.log(projects);
+    }, [projects]);
     const [isDialogueShow, setIsDialogueShow] = useState<Boolean>(false);
     const [slideIndex, setSlideIndex] = useState<number>(0);
     const dialogueClassess = ['dialogue--wrapper'];
@@ -26,7 +34,13 @@ export default function Commercial() {
         }
     }
     return (
-        <div className="commercial--wrapper func--full-height">
+        <div className="project--wrapper func--full-height">
+            <div className="preview--list">
+                {/* {projects[0].title} */}
+                {
+                    projects.map(project => (<div className="preview--item" key={project.type}>{project.title}</div>))
+                }
+            </div>
             <div className="preview--wrapper">
                 {
                     imgs.map((image, index) => {

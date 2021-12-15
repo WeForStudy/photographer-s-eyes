@@ -16,6 +16,7 @@ import Architecture from './pages/architecture/Architecture';
 import Portrait from './pages/portrait/Portrait';
 import Commercial from './pages/commercial/Commercial';
 import Lifescape from './pages/lifescape/Lifescape';
+import Project from './pages/project/Project';
 import Contact from './pages/contact/Contact';
 
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/portrait" element={<Portrait />} />
             <Route path="/commercial" element={<Commercial />} />
             <Route path="/lifescape" element={<Lifescape />} />
+            <Route path="/project" element={<Project />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer></Footer>
