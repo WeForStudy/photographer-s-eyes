@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.24.0",
+    "gh-pages": "^3.2.3",
     "history": "5",
     "nuka-carousel": "^4.8.3",
     "react": "^17.0.2",
@@ -25,9 +26,11 @@
     "start": "craco start",
     "build": "craco build",
     "build:pages": "craco build && rm -rf docs && mkdir docs && cp -r build/* docs/",
+    "deploy": "gh-pages -d build",
     "test": "craco test",
     "eject": "craco eject"
   },
+  "homepage": "https://weforstudy.github.io/photographer-s-eyes/docs",
   "eslintConfig": {
     "extends": [
       "react-app",

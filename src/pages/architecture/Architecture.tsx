@@ -32,7 +32,7 @@ export default function Architecture() {
                 imgs.map((image, index) => {
                     const classes = ['img'];
                     if (imgCurrentIndex === index) classes.push('is-show');
-                    return (<img key={image.src} className={classes.join(' ')} src={image.src} alt="Opps."/>)
+                    return (<img key={image.src} className={classes.join(' ')} src={`${process.env.PUBLIC_URL + image.src}`} alt="Opps."/>)
                 })
             }
         </div>
