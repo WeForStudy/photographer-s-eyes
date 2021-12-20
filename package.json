@@ -26,11 +26,12 @@
     "start": "craco start",
     "build": "craco build",
     "build:pages": "craco build && rm -rf docs && mkdir docs && cp -r build/* docs/",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "craco test",
     "eject": "craco eject"
   },
-  "homepage": "https://weforstudy.github.io/photographer-s-eyes/docs",
+  "homepage": "https://weforstudy.github.io/photographer-s-eyes",
   "eslintConfig": {
     "extends": [
       "react-app",
