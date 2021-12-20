@@ -1,13 +1,17 @@
+$padding-top: 50px;
+$padding-bottom: 20px;
 .project--wrapper {
   z-index: 999;
   display: flex;
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
   justify-content: center;
   box-sizing: border-box;
   .preview--list {
     padding-left: 50px;
     padding-right: 50px;
+    max-height: calc(100% - #{$padding-top} - #{$padding-bottom});
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +29,9 @@
   }
   .preview--wrapper {
     flex-wrap: wrap;
-    max-width: 950px;
+    max-width: 840px;
+    max-height: calc(100% - #{$padding-top} - #{$padding-bottom});
+    overflow-y: auto;
     .preview-img--item {
       display: inline-block;
       background-color: rgba(165, 165, 165, 0.1);

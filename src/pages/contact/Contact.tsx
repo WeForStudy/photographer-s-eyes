@@ -6,6 +6,10 @@ import { useInput } from '../../hooks/input';
 
 export default function Contact() {
     function handleSentBtnClick() {
+        if (!/^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/.test(email)) {
+            // #TODO finish toast
+            return;
+        }
         sendContactForm({
             name,
             email,
@@ -19,7 +23,7 @@ export default function Contact() {
     const [message, handleMessageChange] = useInput('');
     return (
         <div className="contact--wrapper func--full-height">
-            <div className="title">To HaoranJiang@gmail.com</div>
+            <div className="title">To Haoran Jiang</div>
             <div className="form--wrapper">
                 <div className="form-item">
                     <input className="input" value={name} type="text" name="name" onInput={e => handleNameChange(e)} placeholder="*您的姓名"/>

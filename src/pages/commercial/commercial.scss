@@ -1,11 +1,15 @@
+$padding-top: 30px;
+$padding-bottom: 40px;
 .commercial--wrapper {
   z-index: 999;
   display: flex;
   align-items: center;
   .preview--wrapper {
-    max-width: 950px;
+    max-width: 840px;
     margin: 0 auto;
     flex-wrap: wrap;
+    max-height: calc(100% - #{$padding-top} - #{$padding-bottom});
+    overflow-y: auto;
     .previewr--item {
       display: inline-block;
       background-color: rgba(165, 165, 165, 0.1);

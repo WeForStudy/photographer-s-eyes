@@ -1,5 +1,6 @@
 import React from 'react';
 import './footer.scss';
+import { email } from '../const/email'; 
 
 export default function Footer() {
   const icons = [
@@ -9,15 +10,15 @@ export default function Footer() {
       link: 'https://500px.com.cn/community/user-details/d51181108439d8025c243823370d39218',
     },
     {
-      src: './icons/instagram.svg',
-      title: 'Instagram',
-      link: 'https://500px.com.cn/community/user-details/d51181108439d8025c243823370d39218',
+      src: './icons/tuchong.png',
+      title: 'Tuchong',
+      link: 'https://haoranxiansheng.tuchong.com/',
     },
-    {
-      src: './icons/sina.svg',
-      title: 'Sina Weibo',
-      link: 'https://500px.com.cn/community/user-details/d51181108439d8025c243823370d39218',
-    },
+    // {
+    //   src: './icons/sina.svg',
+    //   title: 'Sina Weibo',
+    //   link: 'https://500px.com.cn/community/user-details/d51181108439d8025c243823370d39218',
+    // },
   ];
   const handleIconImgClick = (link: string) => {
     window.open(link);
@@ -28,7 +29,7 @@ export default function Footer() {
           <div className="contact-me--wrapper">
             <div className="title">联系我</div>
             <div className="content">
-              <a href="mailto:haoranjiang@gmail.com">HAORAOJIANG@GMAIL.COM</a>
+              <a href={`mailto:${email}`}>HAORAOJIANG</a>
               <img className="icon-item" src={icons[0].src} onClick={() => handleIconImgClick(icons[0].link)} alt={icons[0].title} />
             </div>
           </div>

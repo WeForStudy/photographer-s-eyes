@@ -24,6 +24,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:pages": "craco build && rm -rf docs && mkdir docs && cp -r build/* docs/",
     "test": "craco test",
     "eject": "craco eject"
   },
