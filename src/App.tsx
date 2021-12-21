@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -23,10 +23,10 @@ import Contact from './pages/contact/Contact';
 function App() {
   // set default route
   if (window.location.pathname === '/') {
-    window.history.replaceState('/home', '', '/home');
+    window.history.replaceState('#/home', '', '#/home');
   }
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Header></Header>
           <Routes>
@@ -42,7 +42,7 @@ function App() {
           </Routes>
           <Footer></Footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
