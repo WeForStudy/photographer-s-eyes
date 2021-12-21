@@ -40,3 +40,25 @@
   }
 
 }
+
+@media only screen and (max-width: $mobile-width) {
+  .landscape--wrapper {
+    .slider {
+      padding: 10px 30px;
+    }
+    .slider-slide > img { 
+      height: auto;
+    }
+    .slider-control-centerright, .slider-control-centerleft {
+      button {
+        padding: 3px !important;
+      }
+    }
+    .slider-control-centerright {
+      right: 5px !important;
+    }
+    .slider-control-centerleft {
+      left: 5px !important;
+    }
+  }
+}

@@ -41,34 +41,24 @@
 
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: $mobile-width) {
   .cityscape--wrapper {
-      .pics {
-        max-height: 55vh;
-        top: 50%;
-        transform: translateY(-50%);
-        .left, .right {
-          display: block;
-          top: auto;
-          left: 50%;
-          transform: translateX(-50%);
-          height: auto;
-          width: 300px;
-          opacity: 0;
-          transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-          &.is-show {
-            opacity: 1;
-          }
-        }
-        .right {
-          cursor: e-resize;
-          right: auto;
-          bottom: 10px;
-        }
-        .left {
-          cursor: w-resize;
-          top: 10px;
-        }
+    .slider {
+      padding: 10px 30px;
+    }
+    .slider-slide > img { 
+      height: auto;
+    }
+    .slider-control-centerright, .slider-control-centerleft {
+      button {
+        padding: 3px !important;
       }
+    }
+    .slider-control-centerright {
+      right: 5px !important;
+    }
+    .slider-control-centerleft {
+      left: 5px !important;
+    }
   }
 }

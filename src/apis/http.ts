@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+  // "homepage": "https://weforstudy.github.io/photographer-s-eyes",
+const GITHUB_PREFIX = 'https://weforstudy.github.io/photographer-s-eyes';
+
 const http = axios.create({
-  baseURL: '/mock',
-  timeout: 3000, // the unit is millsecond
+  baseURL: process.env.NODE_ENV === 'production' ? `${GITHUB_PREFIX}/mock` : '/mock',
+  timeout: 30000, // the unit is millsecond
   // headers: {'X-Custom-Header': 'foobar'}
 });
 

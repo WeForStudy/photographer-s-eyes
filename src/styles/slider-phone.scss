@@ -4,7 +4,7 @@
 */
 
 // Phone Style
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: $mobile-width) {
   .slider-frame {
     display: flex !important;
     align-items: center;

@@ -1,3 +1,4 @@
 .func--full-height {
   height: calc(100vh - #{$nav-height} - #{$footer-height});
+  box-sizing: border-box;
 }

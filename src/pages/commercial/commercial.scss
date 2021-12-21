@@ -88,3 +88,35 @@ $padding-bottom: 40px;
     }
   }
 }
+
+@media only screen and (max-width: $mobile-width) { 
+  .commercial--wrapper {
+    .preview--wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dialogue--wrapper {
+      .dialogue--inner {
+        width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        .slider-slide > img {
+          height: auto;
+        }
+        .slider-control-centerright {
+          right: -25px !important;
+        }
+        .slider-control-centerleft {
+          left: -25px !important;
+        }
+        .slider-control-centerright,.slider-control-centerleft {
+          button {
+            padding: 3px !important;
+          }
+        }
+      } 
+    }
+  }
+}

@@ -10,7 +10,7 @@
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: $mobile-width) {
     .nav-item-wrapper {
         .nav-item {
             padding: 12px 4px;

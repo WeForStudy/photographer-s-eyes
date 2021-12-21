@@ -74,7 +74,7 @@
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: $mobile-width) {
   .footer--wrapper {
     .top {
       justify-content: center;
@@ -82,10 +82,12 @@
         margin-right: 20px;
         .content {
           a {
-            display: none;
-          }
-          .icon-item {
-            display: inline-block;
+            .text {
+              display: none;
+            }
+            .icon-item {
+              display: inline-block;
+            }
           }
         }
       }
@@ -103,6 +105,8 @@
         }
         .submit-icon-item {
           display: inline-block;
+          position: relative;
+          top: 5px;
         }
       }
       .copyright {

@@ -110,3 +110,37 @@ $padding-bottom: 20px;
     }
   }
 }
+@media only screen and (max-width: $mobile-width) {
+  .project--wrapper { 
+    .preview--list {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .preview--wrapper {
+      max-width: 70%;
+    }
+    .dialogue--wrapper {
+      .dialogue--inner {
+        width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        .slider-slide > img {
+          height: auto;
+        }
+        .slider-control-centerright {
+          right: -25px !important;
+        }
+        .slider-control-centerleft {
+          left: -25px !important;
+        }
+        .slider-control-centerright,.slider-control-centerleft {
+          button {
+            padding: 3px !important;
+          }
+        }
+      } 
+    }
+  }
+  
+}

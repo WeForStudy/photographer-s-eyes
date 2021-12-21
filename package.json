@@ -31,7 +31,6 @@
     "test": "craco test",
     "eject": "craco eject"
   },
-  "homepage": "https://weforstudy.github.io/photographer-s-eyes",
   "eslintConfig": {
     "extends": [
       "react-app",

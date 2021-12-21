@@ -12,7 +12,7 @@ export default function Header() {
     useLayoutEffect(() => {
       // runs on location, i.e. route, change
       const { pathname } = location;
-      if (pathname === '/home') {
+      if (pathname === '/') {
         !(headerClassArr.includes('is-home')) && headerClassArr.push('is-home');
         setHeaderClassArr([...headerClassArr]);
       } else {

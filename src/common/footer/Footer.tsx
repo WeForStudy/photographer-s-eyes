@@ -23,14 +23,19 @@ export default function Footer() {
   const handleIconImgClick = (link: string) => {
     window.open(link);
   }
+  function handleSubmit() {
+
+  }
   return(
     <div className="footer--wrapper">
         <section className="top">
           <div className="contact-me--wrapper">
             <div className="title">联系我</div>
             <div className="content">
-              <a href={`mailto:${email}`}>HAORAOJIANG</a>
-              <img className="icon-item" src={icons[0].src} onClick={() => handleIconImgClick(icons[0].link)} alt={icons[0].title} />
+              <a href={`mailto:${email}`}>
+                <div className="text">HAORAOJIANG</div>
+                <img className="icon-item" src={"./icons/email.svg"} alt={icons[0].title} />
+              </a>
             </div>
           </div>
           <div className="follow-me--wrapper">
@@ -45,9 +50,9 @@ export default function Footer() {
             <div className="title">订阅最新消息</div>
             <div className="input--wrapper">
               <input type="text" className="subscribe-input" placeholder="请输入您的邮箱" />
-              <img className="submit-icon-item" src={icons[0].src} onClick={() => handleIconImgClick(icons[0].link)} alt={icons[0].title} />
+              <img className="submit-icon-item" src={"./icons/submit.svg"} onClick={() => handleSubmit()} alt={icons[0].title} />
             </div>
-            <button className="subscribe-button">订阅</button>
+            <button className="subscribe-button" onClick={() => handleSubmit()} >订阅</button>
           </div>
         </section>
         <div className="copyright">
