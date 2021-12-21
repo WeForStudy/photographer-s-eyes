@@ -21,16 +21,23 @@ import Contact from './pages/contact/Contact';
 
 
 function App() {
-  // set default route
-  if (window.location.pathname === '/') {
-    window.history.replaceState('#/home', '', '#/home');
-  }
+  // // set default route
+  // if (window.location.pathname === '/') {
+  //   window.history.replaceState('#/home', '', '#/home');
+  // }
+  // // PRODUCTION
+  // if (['production','prod'].includes(process.env.NODE_ENV)) {
+  //   console.log('production: ', window.location.pathname);
+  //   if (window.location.pathname === '/') {
+  //     window.history.replaceState('#/home', '', '#/home');
+  //   }
+  // }
   return (
     <HashRouter>
       <div className="App">
         <Header></Header>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/landscape" element={<Landscape />} />
             <Route path="/cityscape" element={<Cityscape />} />
             <Route path="/architecture" element={<Architecture />} />

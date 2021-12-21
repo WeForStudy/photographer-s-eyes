@@ -1,40 +1,40 @@
 const navs = [
     {
         title: '首页',
-        to: 'home',
+        to: '/',
     },
     {
         title: '图库',
         children: [
             {
                 title: '风光',
-                to: 'landscape',
+                to: '/landscape',
             },
             {
                 title: '城市',
-                to: 'cityscape',
+                to: '/cityscape',
             },
             {
                 title: '建筑',
-                to: 'architecture',
+                to: '/architecture',
             },
             {
                 title: '人像',
-                to: 'portrait',
+                to: '/portrait',
             },
             {
                 title: '商业',
-                to: 'commercial',
+                to: '/commercial',
             },
             {
                 title: '生活',
-                to: 'lifescape',
+                to: '/lifescape',
             },
         ]
     },
     {
         title: '项目',
-        to: 'project',
+        to: '/project',
     },
     {
         title: '合作',

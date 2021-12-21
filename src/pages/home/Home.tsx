@@ -6,7 +6,6 @@ import { useImgs } from '../../hooks/imgs';
 
 export default function Home() {
     const [imgs] = useImgs([], getHomeImgs);
-    
     return (
         <div className="home--wrapper">
             <div className="controlers--wrapper"></div>

@@ -21,7 +21,7 @@ export default function Header() {
     }, [location]);
     return (
         <header className={headerClassArr.join(' ')}>
-            <div className="logo" ><Link to="/home">Haoran Jiang</Link></div>
+            <div className="logo" ><Link to="/">Haoran Jiang</Link></div>
             <div className="nav-list--wrapper">
                 {
                     navs.map(nav => !nav.children ? <HeaderItem key={nav.to} to={nav.to} title={nav.title}></HeaderItem> : <HeaderSelect key={nav.title} children={nav.children} title={nav.title}></HeaderSelect>)
