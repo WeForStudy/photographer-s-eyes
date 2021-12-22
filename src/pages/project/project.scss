@@ -90,7 +90,8 @@ $padding-bottom: 20px;
       .slider-slide > img {
         width: auto;
         max-width: 100%;
-        height: 100%;
+        max-height: 100%;
+        height: auto;
       }
       .slider-control-centerright {
         right: 20px !important;
