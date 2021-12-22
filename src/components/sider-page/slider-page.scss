@@ -1,4 +1,4 @@
-.architecture--wrapper {
+.slider-page--wrapper {
   height: calc(100vh - #{$nav-height} - #{$footer-height});
   position: relative;
   .slider {
@@ -42,22 +42,10 @@
       }
     }
   }
-  // .img {
-  //   max-height: calc(100% - #{$padding-gap * 2});
-  //   max-width: calc(100% - #{$padding-gap * 2});
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   opacity: 0;
-  //   transition: opacity 1.5s ease-in-out 0s;
-  //   &.is-show {
-  //     opacity: 1;
-  //   }
-  // }
 }
+
 @media only screen and (max-width: $mobile-width) {
-  .architecture--wrapper {
+  .slider-page--wrapper {
       .slider {
         padding: 10px 30px;
       }
