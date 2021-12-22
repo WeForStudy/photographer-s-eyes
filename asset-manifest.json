@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/photographer-s-eyes/static/css/main.71dd76af.chunk.css",
+    "main.css": "/photographer-s-eyes/static/css/main.d2aca551.chunk.css",
     "main.js": "/photographer-s-eyes/static/js/main.8b86bc06.chunk.js",
     "main.js.map": "/photographer-s-eyes/static/js/main.8b86bc06.chunk.js.map",
     "runtime-main.js": "/photographer-s-eyes/static/js/runtime-main.c03e09a9.js",
@@ -10,13 +10,13 @@
     "static/js/3.a5b6de0b.chunk.js": "/photographer-s-eyes/static/js/3.a5b6de0b.chunk.js",
     "static/js/3.a5b6de0b.chunk.js.map": "/photographer-s-eyes/static/js/3.a5b6de0b.chunk.js.map",
     "index.html": "/photographer-s-eyes/index.html",
-    "static/css/main.71dd76af.chunk.css.map": "/photographer-s-eyes/static/css/main.71dd76af.chunk.css.map",
+    "static/css/main.d2aca551.chunk.css.map": "/photographer-s-eyes/static/css/main.d2aca551.chunk.css.map",
     "static/js/2.05d91fea.chunk.js.LICENSE.txt": "/photographer-s-eyes/static/js/2.05d91fea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c03e09a9.js",
     "static/js/2.05d91fea.chunk.js",
-    "static/css/main.71dd76af.chunk.css",
+    "static/css/main.d2aca551.chunk.css",
     "static/js/main.8b86bc06.chunk.js"
   ]
 }
