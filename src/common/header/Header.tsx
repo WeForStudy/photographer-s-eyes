@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from "react-router-dom";
 import './header.scss';
 import HeaderItem from './HeaderItem';
@@ -6,19 +6,17 @@ import HeaderSelect from './HeaderSelect';
 import navs from '../const/navs';
 
 export default function Header() {
-    let [headerClassArr, setHeaderClassArr] = useState(['header--wrapper'])
-    const location = useLocation()
+    const location = useLocation();
+    let headerClassArr: string[] = ['header--wrapper'];
+    // // runs on location, i.e. route, change
+    const { pathname } = location;
+    if (pathname === '/') {
+      !(headerClassArr.includes('is-home')) && headerClassArr.push('is-home');
 
-    useLayoutEffect(() => {
-      // runs on location, i.e. route, change
-      const { pathname } = location;
-      if (pathname === '/') {
-        !(headerClassArr.includes('is-home')) && headerClassArr.push('is-home');
-        setHeaderClassArr([...headerClassArr]);
-      } else {
-        setHeaderClassArr(headerClassArr.filter(headerClass => headerClass !== 'is-home'));
-      }
-    }, [location]);
+    } else {
+      headerClassArr = headerClassArr.filter(headerClass => headerClass !== 'is-home');
+    }
+  
     return (
         <header className={headerClassArr.join(' ')}>
             <div className="logo" ><Link to="/">Haoran Jiang</Link></div>

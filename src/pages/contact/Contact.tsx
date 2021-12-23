@@ -1,22 +1,42 @@
 
 import React from 'react';
 import './contact.scss';
-import { sendContactForm } from '../../apis/contact';
+// import { sendContactForm } from '../../apis/contact';
 import { useInput } from '../../hooks/input';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Contact() {
     function handleSentBtnClick() {
         if (!/^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/.test(email)) {
             // #TODO finish toast
+            toast.error('邮箱格式错误', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         }
-        sendContactForm({
-            name,
-            email,
-            message
-        }).then(res => {
-            console.log(res);
+        toast('敬请期待', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
         });
+        return;
+        // sendContactForm({
+        //     name,
+        //     email,
+        //     message
+        // }).then(res => {
+        //     console.log(res);
+        // });
     }
     const [name, handleNameChange] = useInput('');
     const [email, handleEmailChange] = useInput('');
@@ -36,6 +56,17 @@ export default function Contact() {
                 </div>
                 <button className="submit--button" onClick={handleSentBtnClick}>发送</button>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+            />
         </div>
     )
 }

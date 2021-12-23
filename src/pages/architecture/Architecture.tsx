@@ -1,5 +1,5 @@
 
-import React, { useState,  useEffect } from 'react';
+import React from 'react';
 import SlidePage from '../../components/sider-page/SliderPage';
 
 import { getArchitectureImgs } from '../../apis/architecture';

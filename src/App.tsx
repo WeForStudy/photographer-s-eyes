@@ -18,7 +18,7 @@ import Commercial from './pages/commercial/Commercial';
 import Lifescape from './pages/lifescape/Lifescape';
 import Project from './pages/project/Project';
 import Contact from './pages/contact/Contact';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   // // set default route

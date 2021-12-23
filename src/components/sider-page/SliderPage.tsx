@@ -2,7 +2,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 import './slider-page.scss';
-import { ImageType } from '../../types/ImageType';
 
 export default function SlidePage(props: any) {
     const { imgs } = props;

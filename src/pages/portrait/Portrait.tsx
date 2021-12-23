@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './portrait.scss';
 import { getPortraitImgs } from '../../apis/portrait';
 import { useImgs } from '../../hooks/imgs';
@@ -7,8 +7,6 @@ import { ImageType } from '../../types/ImageType';
 
 export default function Portrait() {
     const [imgs] = useImgs([], getPortraitImgs);
-    const [leftArrs, setLeftArrs] = useState<Array<ImageType>>([]);
-    const [rightArrs, setRightArrs] = useState<Array<ImageType>>([]);
     const [currentImgShowIndex, setCurrentImgShowIndex] = useState<number>(0);
     function handleImageClick(img: ImageType, isEven: boolean) {
         const gap: number = 1;
@@ -22,18 +20,16 @@ export default function Portrait() {
             }
         }
     }
-    useEffect(() => {
-        imgs.forEach((image, index) => {
-            const isEven = index % 2 === 0;
-            if (isEven) {
-                leftArrs.push(image);
-            } else {
-                rightArrs.push(image);
-            }
-        });
-        setLeftArrs([...leftArrs]);
-        setRightArrs([...rightArrs]);
-    }, [imgs]);
+    const leftArrs: Array<ImageType> = [];
+    const rightArrs: Array<ImageType> = [];
+    imgs.forEach((image, index) => {
+        const isEven = index % 2 === 0;
+        if (isEven) {
+            leftArrs.push(image);
+        } else {
+            rightArrs.push(image);
+        }
+    });
     return (
         <div className="portrait--wrapper func--full-height">
             <div className="pics">

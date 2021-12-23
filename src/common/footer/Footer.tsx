@@ -1,6 +1,7 @@
 import React from 'react';
 import './footer.scss';
 import { email } from '../const/email'; 
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Footer() {
   const icons = [
@@ -20,11 +21,20 @@ export default function Footer() {
     //   link: 'https://500px.com.cn/community/user-details/d51181108439d8025c243823370d39218',
     // },
   ];
-  const handleIconImgClick = (link: string) => {
+  function handleIconImgClick(link: string) {
     window.open(link);
   }
-  function handleSubmit() {
 
+  function handleSubmit() {
+    toast('敬请期待', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
   }
   return(
     <div className="footer--wrapper">
@@ -58,6 +68,17 @@ export default function Footer() {
         <div className="copyright">
           COPYRIGHT 2021 HAORAN JIANG, ALL RIGHTS RESERVED
         </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+        />
     </div>
   )
 }

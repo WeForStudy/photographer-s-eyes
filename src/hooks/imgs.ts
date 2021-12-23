@@ -6,14 +6,11 @@ export function useImgs(initialVal: Array<ImageType>, apisCall: Function, callba
   useEffect(() => {
       apisCall().then((res: Array<ImageType>) => {
           setImgs(res);
+          if (callback) {
+            callback();
+          }
       });
-  }, [])
-  useEffect(() => {
-    if (callback && !!imgs.length) {
-      console.log('???');
-      callback();
-    }
-  }, [imgs]);
+  }, [setImgs, apisCall, callback])
   return [imgs];
 }
     
