@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-  // "homepage": "https://weforstudy.github.io/photographer-s-eyes",
-const GITHUB_PREFIX = 'https://weforstudy.github.io/photographer-s-eyes';
+const pjson = require('../../package.json');
+const GITHUB_PREFIX = pjson.homepage;
 
 const http = axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? `${GITHUB_PREFIX}/mock` : '/mock',

@@ -28,7 +28,7 @@
     "build": "craco build",
     "build:pages": "craco build && rm -rf docs && mkdir docs && cp -r build/* docs/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "echo 'haoranjiang.cn' > ./build/CNAME && gh-pages -d build",
     "test": "craco test",
     "eject": "craco eject"
   },

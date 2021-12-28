@@ -49,6 +49,11 @@ $padding-bottom: 40px;
       .paging-dots--container {
         display: none !important; // to hidden the paging dots
       }
+
+      .slider {
+        user-select: none;
+        pointer-events: none;
+      }
       .slider-list {
         cursor: default !important;
         max-height: 100vh;
