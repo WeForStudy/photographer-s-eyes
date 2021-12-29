@@ -71,6 +71,11 @@ $padding-bottom: 20px;
       .paging-dots--container {
         display: none !important; // to hidden the paging dots
       }
+      .slider {
+        &:focus {
+          outline: none;
+        }
+      }
       .slider-list {
         cursor: default !important;
         max-height: 100vh;

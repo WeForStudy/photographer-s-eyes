@@ -3,7 +3,7 @@
 3. Add eslint/tslint
 <!-- 4. Make a Component for landscape etc. -->
 <!-- 5. toast -->
-6. focus问题
-
+<!-- 6. focus问题 -->
+7. Dialogue背景露出问题
 ## BE
 I. Send Email

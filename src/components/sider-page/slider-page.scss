@@ -4,8 +4,9 @@
   .slider {
     padding: 10px 80px;
     max-height: 100%;
-    user-select: none;
-    pointer-events: none;
+    &:focus {
+      outline: none;
+    }
   }
   .slider-list {
     cursor: default !important;
